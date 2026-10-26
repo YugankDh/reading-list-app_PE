@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Reading List Application - Assignment 11</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="app-header">
+            <h1>Student Reading List</h1>
+            <p class="subtitle">Assignment 11: Vibe Coding Reading List App</p>
+        </header>
+
+        <!-- Summary Section (Additional-Features Prompt) -->
+        <section class="summary-grid" id="summarySection">
+            <div class="summary-card">
+                <span class="summary-label">Total Books</span>
+                <span class="summary-val" id="totalBooksCount">0</span>
+            </div>
+            <div class="summary-card">
+                <span class="summary-label">Currently Reading</span>
+                <span class="summary-val" id="readingCount">0</span>
+            </div>
+            <div class="summary-card">
+                <span class="summary-label">Finished</span>
+                <span class="summary-val" id="finishedCount">0</span>
+            </div>
+        </section>
+
+        <!-- Add Book Form -->
+        <section class="card form-card">
+            <h2>Add New Book</h2>
+            <form id="addBookForm">
+                <div class="form-group">
+                    <label for="bookTitle">Book Title (Max 60 chars)</label>
+                    <input 
+                        type="text" 
+                        id="bookTitle" 
+                        placeholder="e.g., Clean Code by Robert C. Martin" 
+                        maxlength="100"
+                        autocomplete="off"
+                        required
+                    >
+                    <span id="formFeedback" class="feedback-msg"></span>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="initialStatus">Reading Status</label>
+                        <select id="initialStatus">
+                            <option value="Want to Read">Want to Read</option>
+                            <option value="Reading">Reading</option>
+                            <option value="Finished">Finished</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="addBookBtn">Add Book</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Filters & Book List -->
+        <section class="card list-card">
+            <div class="list-header">
+                <h2>My Books</h2>
+                <div class="filter-group">
+                    <label for="statusFilter">Filter:</label>
+                    <select id="statusFilter">
+                        <option value="All">All Statuses</option>
+                        <option value="Want to Read">Want to Read</option>
+                        <option value="Reading">Reading</option>
+                        <option value="Finished">Finished</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Empty State Message -->
+            <div id="emptyState" class="empty-state">
+                <p>Your reading list is empty. Add your first book.</p>
+            </div>
+
+            <!-- Books Container -->
+            <div id="booksGrid" class="books-grid"></div>
+        </section>
+
+        <footer class="app-footer">
+            <p><a href="../../index.html" class="back-link">&larr; Back to Portfolio</a></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
